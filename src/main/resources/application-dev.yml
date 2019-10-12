@@ -1,0 +1,17 @@
+server:
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: alinsno-lin-demo
+  datasource:
+    url: jdbc:mysql://db4free.net:3306/thoseyears?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&serverTimezone=GMT
+    username: thoseyears
+    password: 110120lin..
+  devtools:
+    restart:
+      enabled: false 
+   
+dubbo:
+  application:
+    name: alinsno-lin-demo
