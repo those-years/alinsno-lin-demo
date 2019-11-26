@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  * <p>  服务实现类 </p>
  *
  * @author 张三
- * @since 2019-11-02 14:35:40
+ * @since 2019-11-26 02:10:48
  */
 @Service
 public class StudentServiceImpl extends IBaseServiceImpl<StudentEntity, String> implements IStudentService {
