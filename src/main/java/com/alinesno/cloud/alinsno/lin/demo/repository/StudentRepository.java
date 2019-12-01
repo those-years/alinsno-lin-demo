@@ -9,7 +9,7 @@ import com.alinesno.cloud.common.facade.orm.repository.IBaseJpaRepository;
  * </p>
  *
  * @author 张三
- * @since 2019-11-26 02:10:48
+ * @since 2019-12-01 07:21:20
  */
 public interface StudentRepository extends IBaseJpaRepository<StudentEntity, String> {
 
