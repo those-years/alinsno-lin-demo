@@ -8,7 +8,7 @@ import com.alinesno.cloud.common.facade.services.IBaseService;
  * <p>  服务类 </p>
  *
  * @author 张三
- * @since 2019-12-25 10:15:23
+ * @since 2020-01-06 13:39:33
  */
 @NoRepositoryBean
 public interface ITeacherService extends IBaseService<TeacherEntity, String> {
