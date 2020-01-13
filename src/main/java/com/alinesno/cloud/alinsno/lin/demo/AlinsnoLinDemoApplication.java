@@ -9,7 +9,7 @@ import com.alinesno.cloud.common.web.enable.EnableLogin;
  * 启动入口
  *
  * @author ${author}
- * @sine 2020-01-06 21:01:544
+ * @sine 2020-01-14 06:01:419
  */
 @EnableJpaAuditing
 @SpringBootApplication

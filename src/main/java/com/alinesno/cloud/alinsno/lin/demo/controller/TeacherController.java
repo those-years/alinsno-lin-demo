@@ -16,7 +16,7 @@ import com.alinesno.cloud.alinsno.lin.demo.entity.TeacherEntity;
 import com.alinesno.cloud.alinsno.lin.demo.service.ITeacherService;
 
 import com.alinesno.cloud.common.core.constants.SpringInstanceScope;
-import com.alinesno.cloud.common.core.page.DatatablesPageBean;
+import com.alinesno.cloud.common.facade.pageable.DatatablesPageBean;
 import com.alinesno.cloud.common.web.base.advice.TranslateCode;
 import com.alinesno.cloud.common.web.base.controller.FeignMethodController;
 
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Controller;
  * <p> 前端控制器 </p>
  *
  * @author 张三
- * @since 2020-01-06 21:44:41
+ * @since 2020-01-14 06:35:36
  */
 @Controller
 @Scope(SpringInstanceScope.PROTOTYPE)
