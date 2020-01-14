@@ -6,7 +6,7 @@
 <!--
 @desc  管理
 @author 张三
-@since 2020-01-14 22:08:32
+@since 2020-01-14 22:12:59
 -->
 
 	<div class="container-div">
@@ -36,9 +36,11 @@
 				<a class="btn btn-danger btn-del disabled" onclick="$.operate.removeAll()">
 		            <i class="fa fa-remove"></i> 删除
 		        </a>
+		        <!--
 		        <a class="btn btn-danger" onclick="$.operate.clean()">
 	                <i class="fa fa-trash"></i> 清空
 	            </a>
+	            -->
 	            <a class="btn btn-warning" onclick="$.table.exportExcel()">
 		            <i class="fa fa-download"></i> 导出
 		        </a>
@@ -60,7 +62,7 @@
 		        url: prefix +"datatables" ,
 		        createUrl: prefix + 'add' ,
 		        updateUrl: prefix +"modify?id={id}" ,
-		        changeStatusUrl: prefix +"changeStatus?id={id}" ,
+		        statusUrl: prefix +"changeStatus?id={id}" ,
 		        cleanUrl: prefix + "clean",
 		        detailUrl: prefix +"detail?id={id}",
 		        removeUrl: prefix + "delete" ,

@@ -6,7 +6,7 @@
 <!--
 @desc  详情 
 @author 张三
-@since 2020-01-14 22:08:32
+@since 2020-01-14 22:12:59
 -->
 
 	<div layout:fragment="content">
@@ -44,11 +44,5 @@
 
 	<footer th:replace="dashboard/footer :: footer"></footer>
 
-	<script type="text/javascript">
-		function submitHandler() {
-            var modifyUrl = ctx+"alinsno/lin/demo/student/update" ;
-			$.operate.save(modifyUrl , $('#modifyForm').serialize());
-	    }
-	</script>
 </body>
 </html>

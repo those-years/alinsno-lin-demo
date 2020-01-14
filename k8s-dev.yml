@@ -1,0 +1,87 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: dev-alinsno-lin-demo
+  labels:
+    app: dev-alinsno-lin-demo
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: dev-alinsno-lin-demo
+  template:
+    metadata:
+      labels:
+        app: dev-alinsno-lin-demo
+    spec:
+      containers:
+      - name: dev-alinsno-lin-demo
+        image: registry-vpc.cn-shenzhen.aliyuncs.com/alinesno-cloud/alinsno-lin-demo:1.0.0-SNAPSHOT
+        resources:
+          limits:
+            cpu: 710m
+            memory: 2048Mi
+          requests:
+            cpu: 200m
+            memory: 512Mi
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+          - name: SPRING_APPLICATION_NAME
+            value: 'alinsno-lin-demo'
+          - name: SERVER_PORT
+            value: '8080'
+          - name: REGISTER_ADDRESS
+            value: 'zookeeper://zookeeper-dev:2181/'
+          - name: REDIS_HOST
+            value: 'redis-dev'
+          - name: REDIS_PORT
+            value: '6379'
+          - name: REDIS_PASSWORD
+            value: 'redisPassword'
+          - name: DATASOURCE_URL
+            value: 'jdbc:mysql://db4free.net:3306/thoseyears?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&serverTimezone=GMT'
+          - name: DATASOURCE_HOST
+            value: 'mysql-dev:3306'
+          - name: DATASOURCE_DATABASE
+            value: 'alinesno_cloud_base_boot'
+          - name: DATASOURCE_USERNAME
+            value: 'thoseyears'
+          - name: DATASOURCE_PASSWORD
+            value: '110120lin..'
+          - name: SPRING_BOOT_ADMIN_URL
+            value: http://operation-alinesno-cloud-platform-admin:24003
+          - name: SPRING_BOOT_ADMIN_USERNAME
+            value: admin
+          - name: SPRING_BOOT_ADMIN_PASSWORD
+            value: admin
+          - name: MANAGEMENT_BASE_URL
+            value: http://dev-alinsno-lin-demo:8080
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 45
+        imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-alinsno-lin-demo
+  namespace: default
+  labels:
+    app: dev-alinsno-lin-demo
+spec:
+  ports:
+    - name: tcp-8080
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 8080
+  selector:
+    app: dev-alinsno-lin-demo
+  type: NodePort

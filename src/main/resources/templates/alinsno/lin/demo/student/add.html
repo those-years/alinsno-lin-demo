@@ -6,7 +6,7 @@
 <!--
 @desc  添加
 @author 张三
-@since 2020-01-14 22:08:32
+@since 2020-01-14 22:12:59
 -->
 	<div layout:fragment="content">
 		<div class="container-fluid content-main">
@@ -43,9 +43,23 @@
 	<footer th:replace="dashboard/footer :: footer"></footer>
 
 	<script type="text/javascript">
+		var addForm = $("#addForm") ; 
+		$(function(){
+			addForm.validate({
+				ignore: [],  
+				rules: {
+name: {required:true}
+,password: {required:true}
+				}
+			});
+		}) ;
+
 		function submitHandler() {
-		    var saveUrl = ctx+"alinsno/lin/demo/student/save" ;
-			$.operate.save(saveUrl , $('#addForm').serialize());
+			var result = $.validate.form("addForm");
+			if(result){	
+				var saveUrl = ctx+"alinsno/lin/demo/student/save" ;
+				$.operate.save(saveUrl , addForm.serialize());
+			}
 	    }
 	</script>
 
