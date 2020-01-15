@@ -11,7 +11,7 @@ import com.alinesno.cloud.common.facade.orm.entity.BaseEntity;
  * </p>
  *
  * @author 张三
- * @since 2020-01-14 22:12:59
+ * @since 2020-01-15 11:45:53
  */
 @Entity
 @Table(name="teacher")
