@@ -6,7 +6,7 @@
 <!--
 @desc  添加
 @author 张三
-@since 2020-01-15 11:45:53
+@since 2020-02-08 11:13:11
 -->
 	<div layout:fragment="content">
 		<div class="container-fluid content-main">
@@ -48,8 +48,8 @@
 			addForm.validate({
 				ignore: [],  
 				rules: {
-name: {required:true}
-,number: {required:true}
+name: {required:true,number:true}
+,number: {required:true,number:true}
 				}
 			});
 		}) ;

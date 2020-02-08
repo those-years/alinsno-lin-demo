@@ -59,6 +59,8 @@ spec:
             value: admin
           - name: MANAGEMENT_BASE_URL
             value: http://dev-alinsno-lin-demo:8080
+          - name: JAVA_TOOL_OPTIONS
+            value: "-Xms128m -Xmx512m -Dspring.profiles.active=hub"
         livenessProbe:
           tcpSocket:
             port: 8080

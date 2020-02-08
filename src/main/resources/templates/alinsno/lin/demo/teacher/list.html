@@ -6,7 +6,7 @@
 <!--
 @desc  管理
 @author 张三
-@since 2020-01-15 11:45:53
+@since 2020-02-08 11:13:11
 -->
 
 	<div class="container-div">
@@ -34,7 +34,7 @@
 		            <i class="fa fa-edit"></i> 修改
 		        </a>
 				<a class="btn btn-danger btn-del disabled" onclick="$.operate.removeAll()">
-		            <i class="fa fa-remove"></i> 删除
+		            <i class="far fa-trash-alt"></i> 删除
 		        </a>
 		        <!--
 		        <a class="btn btn-danger" onclick="$.operate.clean()">
@@ -66,7 +66,7 @@
 		        cleanUrl: prefix + "clean",
 		        detailUrl: prefix +"detail?id={id}",
 		        removeUrl: prefix + "delete" ,
-		        exportUrl: prefix + "export",
+		        exportUrl: prefix + "exportExcel",
 		        sortName: "operTime",
 		        uniqueId:"id" ,
 		        sortOrder: "desc",
@@ -85,7 +85,7 @@
 
 			                actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.detail(\'' + row.id + '\')"><i class="fa fa-edit"></i>详情</a> ');
 			                actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i>编辑</a> ');
-			                actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i>删除</a> ');
+			                actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="far fa-trash-alt"></i>删除</a> ');
 
 			                return actions.join('');
 			          }
